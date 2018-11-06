@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <style>
+        div{
+            width: 150px;
+            height: 150px;
+            background-color: aquamarine;
+            border: 2px solid black;
+            display: inline-block;
+        }
+        div input{
+            position: relative;
+            margin-left: 40px;
+            margin-top: 60px;
+        }
+        .location{
+            text-align: center;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Your Gold = {{session.total}} </h2>
+    <div>
+        <form action="/process_money" method="post">
+            <h3 class="location" >Farm</h3>
+            <input type="hidden" name="building" value="farm" />
+            <input type="submit" value="Find Gold!"/>
+        </form>
+    </div>
+    <div>
+        <form action="/process_money" method="post">
+            <h3 class="location" >Cave</h3>
+            <input type="hidden" name="building" value="Cave" />
+            <input type="submit" value="Find Gold!"/>
+        </form>
+    </div>
+    <div>
+        <form action="/process_money" method="post">
+            <h3 class="location" >House</h3>
+            <input type="hidden" name="building" value="House" />
+            <input type="submit" value="Find Gold!"/>
+        </form>
+    </div>
+    <div>
+        <form action="/process_money" method="post">
+            <h3 class="location" >Casino</h3>
+            <input type="hidden" name="building" value="Casino" />
+            <input type="submit" value="Find Gold!"/>
+        </form>
+    </div>
+    <form action="/reset" method="post">
+    <input type="submit" name="reset">
+    </form>
+Casino {{request.form.building}}
+   </body> 
+</html>
